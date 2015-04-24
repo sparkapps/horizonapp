@@ -1,0 +1,221 @@
+<% include partials/header.ejs %>
+
+<div class="container-fluid toosmall">
+  <div class="row">
+    <div class="col-sm-12"><img class="toosmallimage" src="/images/cat_eyes.png"></div>
+  </div>
+    <div class="row help">
+    <div class="col-md-12"><p class="putmeback">Does it feel like the walls are closing in? Expand your browser window to see the content! (Responsiveness coming soon)</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="container-fluid projectsynopsis">
+
+  <div class="row">
+    <div class="col-md-1 col-md-offset-11"><div id="header_hello" class="small-12 medium-5 large-4 large-pull-1 columns">
+      <h2 class="greeting">horizon</h2>
+    </div>
+    </div>
+  </div>
+
+  <div class="row"><div class="col-md-12"><hr class="break"></div></div>
+
+  <div class="row about">
+    <div class="col-md-12">I built horizon as a personal chrome extension to enjoy. The app retrieves your location, and connects to wunderground's api to tell users what's coming up on their personal horizons. There are many weather and time apps, but finding a new way to express that information was a fun challenge.
+    </div>
+  </div>
+
+</div>
+
+<div class="container fixedwith">
+  <!-- row for city and potentially the date -->
+      <div class="row">
+        <!-- column for city -->
+        <div class="col-md-12 col-md-offset-2 subdividerleft">
+          <div id="animated-example" class="animated fadeInDown">
+            <div id="city"></div>
+          </div>
+        </div>
+        <!-- close row -->
+      </div>
+  </div>
+
+
+
+  <div class="container fixedwidth">
+
+    <!-- row for time and seconds circle -->
+    <div class="row">
+      <div class="col-md-12 col-md-offset-2 time">
+        <div id="animated-example" class="animated fadeInUp">
+          <div id="info"></div>
+        </div>
+
+
+
+        <script language="JavaScript">
+
+          function clock(){
+            var time = new Date()
+            var hr = time.getHours()
+            var min = time.getMinutes()
+            var sec = time.getSeconds()
+            var ampm = " PM "
+            if (hr < 12){
+              ampm = " AM "
+            }
+            if (hr > 12){
+              hr -= 12
+            }
+            if (hr < 10){
+              hr = hr
+            }
+            if (min < 10){
+              min = "0" + min
+            }
+            if (sec < 10){
+              sec = "0" + sec
+            }
+            if (hr === 12) {
+              hr = "twelve"
+            }
+            if (hr === 11) {
+              hr = "eleven"
+            }
+            if (hr === 10) {
+              hr = "ten"
+            }
+            if (hr === 9) {
+              hr = "nine"
+            }
+            if (hr === 8) {
+              hr = "eight"
+            }
+            if (hr === 7) {
+              hr = "seven"
+            }
+            if (hr === 6) {
+              hr = "six"
+            }
+            if (hr === 5) {
+              hr = "five"
+            }
+            if (hr === 4) {
+              hr = "four"
+            }
+            if (hr === 3) {
+              hr = "three"
+            }
+            if (hr === 2) {
+              hr = "two"
+            }
+            if (hr === 1) {
+              hr = "one"
+            }
+            if (hr === 0) {
+              hr = "twelve"
+            }
+
+            document.getElementById('info').innerHTML = hr+"  "+min
+            setTimeout("clock()", 1000)
+
+          }
+
+          window.onload=clock();
+        </script>
+
+
+        <!-- progressbar.js circle for seconds -->
+        <script>
+          var line = new ProgressBar.Line('#container');
+          var progressBar = new ProgressBar.Circle('#container', {
+            strokeWidth: 2
+          });
+        </script>
+
+
+
+        <div class="time result">
+          <!-- <div class="col-md-3 time result"> -->
+          <div class="example-container" id="example-clock-container"><header id="clock-seconds"></header></div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.js"></script>
+        <script>
+
+          var element = document.getElementById('example-clock-container');
+          element.innerHTML = '<header id="clock-seconds"></header>';
+          var textElement = document.getElementById('clock-seconds');
+
+          var seconds = new ProgressBar.Circle(element, {
+            duration: 200,
+            color: "#FFF",
+            trailColor: "#7BE1AE"
+          });
+
+          setInterval(function() {
+            var second = new Date().getSeconds();
+            seconds.animate(second / 60, function() {
+              textElement.innerHTML = second;
+            });
+          }, 1000);
+        </script>
+
+
+      </div>
+      <!-- close the row -->
+    </div>
+
+
+  <div id="container fixedwidth">
+
+    <div class="row display" id="weatherdiv">
+      <div class="col-md-12 col-md-offset-2 weather" id="column1" style="display:none">
+        <div id="animated-example" class="animated fadeInUp">
+          <div id="currenttemp"></div>
+          <div id="weathertype"></div>
+        </div>
+      </div>
+    </div>
+
+  <div class="row display"  id="sunrisediv">
+    <div class="col-md-12 col-md-offset-2 weather" id="column2" style="display:none">
+      <div id="animated-example" class="animated fadeInUp">
+        <div id="sunrise"></div>
+        <p class="todaysunrise"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row display"  id="sunsetdiv">
+    <div class="col-md-12 col-md-offset-2 weather" id="column3" style="display:none">
+      <div id="animated-example" class="animated fadeInUp">
+        <div id="sunset"></div>
+        <p class="todaysunset"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row display"  id="moondiv">
+    <div class="col-md-12 col-md-offset-2 weather" id="column4" style="display:none">
+      <div id="animated-example" class="animated fadeInUp">
+        <div id="moon"></div>
+        <p class="moonphase"></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<% include partials/footer.ejs %>

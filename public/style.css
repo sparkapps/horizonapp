@@ -1,0 +1,309 @@
+body {
+  background-color:#69B391;
+  padding-bottom:100px;
+}
+
+.fixedwidth {
+    min-width:1000px;
+}
+
+.projectsynopsis {
+  padding:60px;
+  background-color:#fafafa;
+  text-align:right;
+  width:100%;
+}
+
+
+.greeting {
+float:right;
+  text-align:right;
+  padding-right:50px;
+  padding-top:30px;
+  font-family: 'Open Sans', sans-serif;
+  font-size:35px;
+  color:black;
+  font-weight:600;
+}
+
+.about {
+  text-align:right;
+  padding-right:50px;
+  padding-top:10px;
+  font-family: 'Open Sans', sans-serif;
+  font-size:15px;
+  color:black;
+  font-weight:300;
+  max-width:600px;
+  float:right;
+  line-height: 1.6667em;
+}
+
+.break {
+  width: 30px;
+  border: 1px solid black;
+  margin-right: 50px;
+  margin-top: 30px;
+  float:right;
+}
+
+#example-clock-container {
+    height:120px;
+    width: 120px;
+    margin-top:13px;
+    margin-left:30px;
+}
+
+#clock-seconds {
+    display:none;
+}
+
+.subdividerleft {
+  height:50px;
+  margin-top:100px;
+  text-align:left;
+}
+
+.subdividerright {
+  height:50px;
+  margin-top:100px;
+  text-align:right;
+}
+
+.col-md-offset-1 {
+  margin-left: 4%;
+}
+
+.col-md-12 {
+    width:100%;
+    display:flex;
+}
+
+#weatherdiv {
+    text-align:left;
+}
+
+#sunrisediv {
+    text-align:left;
+}
+
+#sunsetdiv {
+    text-align:left;
+}
+
+#moondiv {
+    text-align:left;
+}
+
+.time {
+      height:200px;
+      margin-bottom:50px;
+      margin-top:50px;
+      text-align:left;
+      font-family: 'Lato', sans-serif;
+      font-weight:100;
+}
+
+#info {
+    color:white;
+    font-size: 160px;
+    font-family: 'Lato', sans-serif;
+    font-weight:100;
+}
+
+#seconds {
+    color:rgba(255,255,255, 0.3);
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    font-weight:100;
+}
+
+#city {
+    color:white;
+    font-size: 23px;
+    font-family: 'Lato', sans-serif;
+    text-transform: lowercase;
+    letter-spacing: .1em;
+}
+
+
+#currenttemp {
+    color:white;
+    font-size: 23px;
+    font-family: 'Lato', sans-serif;
+    text-transform: lowercase;
+    letter-spacing: .1em;
+}
+
+#currenttemp::after {
+    content: "\00b0";
+}
+
+#sunrise {
+    color:white;
+    font-size: 23px;
+    font-family: 'Lato', sans-serif;
+    text-transform: lowercase;
+    letter-spacing: .1em;
+}
+
+#sunset {
+    color:white;
+    font-size: 23px;
+    font-family: 'Lato', sans-serif;
+    text-transform: lowercase;
+    letter-spacing: .1em;
+}
+
+#moon {
+    color:white;
+    font-size: 23px;
+    font-family: 'Lato', sans-serif;
+    text-transform: lowercase;
+    letter-spacing: .1em;
+}
+
+#weathertype {
+    color:rgba(255,255,255, 0.3);
+    font-size: 23px;
+    font-family: 'Lato', sans-serif;
+    text-transform: lowercase;
+    letter-spacing: .1em;
+}
+
+.todaysunrise {
+    color:rgba(255,255,255, 0.3);
+    font-size: 23px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: lowercase;
+    font-weight: 400;
+    letter-spacing: .05em;
+}
+
+.todaysunset {
+    color:rgba(255,255,255, 0.3);
+    font-size: 23px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: lowercase;
+    font-weight: 400;
+    letter-spacing: .05em;
+}
+
+.moonphase {
+    color:rgba(255,255,255, 0.3);
+    font-size: 23px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: lowercase;
+    font-weight: 400;
+    letter-spacing: .05em;
+}
+
+.animated {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+.toosmall {
+  display:none;
+}
+
+@media (min-width: 200px) and (max-width: 1000px) {
+
+body {
+    background:none;
+}
+
+.fixedwith {
+  display:none;
+}
+
+.projectsynopsis {
+  display:none;
+}
+
+.toosmall {
+  display:block;
+  background:#B7E2DB;
+  padding:100px;
+  text-align:center;
+  height:1200px;
+}
+
+.toosmallimage {
+  margin-top:100px;
+}
+
+.putmeback {
+  font-family: 'Open Sans', sans-serif;
+  font-size:20px;
+  color:#6B6B6B;
+  font-weight:300;
+  padding:100px;
+  text-align:center;
+  margin-top:-50px;
+  }
+}
